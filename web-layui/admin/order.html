@@ -129,7 +129,7 @@
                     break;
                 case 'deal':
                     layer.confirm('确认处理退款？', function (index) {
-                        $.post('pay/deal/' + obj.data.id, function (res) {
+                        $.post('pay/refund/' + obj.data.id, function (res) {
                             if (res.code === 0) {
                                 table.reload('table', {page: {curr: $(".layui-laypage-em").next().html()}});
                             }

@@ -1,7 +1,7 @@
 package com.cc.mall.app.component.mq;
 
 import com.alibaba.fastjson.JSON;
-import com.cc.mall.common.component.redis.service.RedisService;
+import com.cc.mall.common.component.redis.RedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionListener;

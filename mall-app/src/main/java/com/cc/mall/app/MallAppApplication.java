@@ -1,6 +1,6 @@
 package com.cc.mall.app;
 
-import com.cc.mall.common.component.redis.service.RedisService;
+import com.cc.mall.common.component.redis.RedisService;
 import com.cc.mall.common.utils.utils.Constants;
 import com.cc.mall.mbg.entity.Product;
 import com.cc.mall.mbg.service.ProductService;

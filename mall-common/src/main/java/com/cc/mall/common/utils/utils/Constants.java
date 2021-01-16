@@ -46,14 +46,14 @@ public class Constants {
             "<head>" +
             "<meta charset=\"utf-8\">" +
             "</head>" +
-            "<body onload='alert(\"支付成功\");window.history.go(-3);'>" +
+            "<body onload='alert(\"支付成功\");window.history.go(-6);'>" +
             "</body>" +
             "</html>"; // 回退历史-3
     public static final String PAY_FAILURE_RETURN = "<html>" +
             "<head>" +
             "<meta charset=\"utf-8\">" +
             "</head>" +
-            "<body onload='alert(\"支付失败\");window.history.go(-3);'>" +
+            "<body onload='alert(\"支付失败\");window.history.go(-5);'>" +
             "</body>" +
             "</html>"; // 回退历史-3
 }

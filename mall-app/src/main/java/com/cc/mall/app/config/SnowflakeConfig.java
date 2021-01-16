@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * mall-app
+ * mall-common
  * 雪花算法配置
  *
  * @author Chan

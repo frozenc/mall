@@ -1,23 +1,16 @@
 package com.cc.mall.admin.facade;
 
-import cn.hutool.core.lang.Snowflake;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cc.mall.admin.dao.StockDao;
-import com.cc.mall.common.base.GlobalException;
-import com.cc.mall.common.component.redis.service.RedisService;
-import com.cc.mall.common.utils.api.ResultCode;
-import com.cc.mall.common.utils.dto.CartDto;
+import com.cc.mall.common.component.redis.RedisService;
 import com.cc.mall.common.utils.dto.page.OrderPageRequest;
 import com.cc.mall.common.utils.utils.Constants;
 import com.cc.mall.mbg.entity.OrderDetail;
 import com.cc.mall.mbg.entity.OrderMaster;
-import com.cc.mall.mbg.entity.User;
 import com.cc.mall.mbg.service.OrderDetailService;
 import com.cc.mall.mbg.service.OrderMasterService;
-import org.apache.commons.lang3.time.DateFormatUtils;
-import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
@@ -25,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * mall-admin

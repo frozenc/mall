@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 public class OrderVo {
 
-    private String id;
+    private Long id;
 
     private String nickname;
 

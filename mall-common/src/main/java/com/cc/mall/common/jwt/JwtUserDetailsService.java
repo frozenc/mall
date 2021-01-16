@@ -2,7 +2,7 @@ package com.cc.mall.common.jwt;
 
 import cn.hutool.json.JSONUtil;
 import com.cc.mall.common.utils.utils.Constants;
-import com.cc.mall.common.component.redis.service.RedisService;
+import com.cc.mall.common.component.redis.RedisService;
 import com.cc.mall.mbg.entity.User;
 import com.cc.mall.common.service.JwtUserService;
 import lombok.extern.slf4j.Slf4j;

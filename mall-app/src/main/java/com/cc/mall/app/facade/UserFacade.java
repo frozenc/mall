@@ -8,7 +8,7 @@ import com.cc.mall.common.utils.dto.UserLoginDto;
 import com.cc.mall.common.utils.dto.UserRegisterDto;
 import com.cc.mall.common.utils.enums.UserRoleEnum;
 import com.cc.mall.common.utils.utils.Constants;
-import com.cc.mall.common.component.redis.service.RedisService;
+import com.cc.mall.common.component.redis.RedisService;
 import com.cc.mall.common.service.JwtUserService;
 import com.cc.mall.mbg.entity.User;
 import com.cc.mall.mbg.entity.UserRole;

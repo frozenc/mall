@@ -64,6 +64,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources/**",
                         "/v2/api-docs/**"
                 ).permitAll()
+                .antMatchers("/return", "/notify").permitAll() // 支付回调
                 .antMatchers("/login", "/register").permitAll() //登录注册要允许匿名访问
                 .antMatchers(HttpMethod.GET, "/product", "/category", "/test").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll() //跨域请求会先进性一次options请求

@@ -93,7 +93,7 @@ public class OrderConsumer implements RocketMQListener<OrderMessage> {
             //todo 发送邮件通知
 
             //超时取消
-            rocketMQTemplate.syncSend(DelayMessage.TOPIC, MessageBuilder.withPayload(orderMessage).build(), TIME_OUT, ONE_MIN);
+            rocketMQTemplate.syncSend(DelayMessage.TOPIC, MessageBuilder.withPayload(orderMessage).build(), TIME_OUT, FIVE_MIN);
             log.info("订单创建成功, 订单ID:" + orderId);
         } catch (Exception e) {
             log.info("订单创建失败, 订单ID:" + orderId);

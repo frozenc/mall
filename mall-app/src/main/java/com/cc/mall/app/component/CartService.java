@@ -2,7 +2,7 @@ package com.cc.mall.app.component;
 
 import com.cc.mall.common.utils.dto.CartDto;
 import com.cc.mall.common.utils.utils.Constants;
-import com.cc.mall.common.component.redis.service.RedisService;
+import com.cc.mall.common.component.redis.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

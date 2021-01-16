@@ -35,7 +35,7 @@ public class DelayConsumer implements RocketMQListener<DelayMessage> {
                 orderMasterFacade.updateOrderStatus(id, OrderStatusEnum.CANCEL.getCode());
                 log.info("取消订单成功, 订单ID:" + id);
             } else {
-                log.info("订单已付款");
+                log.info("订单已付款, 订单ID:" + id);
             }
         } catch (Exception e) {
             log.info("取消订单失败, 订单ID:" + id);
