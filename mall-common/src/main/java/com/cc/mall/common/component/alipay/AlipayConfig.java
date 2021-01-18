@@ -1,4 +1,4 @@
-package com.cc.mall.common.component.pay;
+package com.cc.mall.common.component.alipay;
 
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;

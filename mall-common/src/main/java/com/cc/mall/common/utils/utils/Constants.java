@@ -2,6 +2,8 @@ package com.cc.mall.common.utils.utils;
 
 //import com.qiniu.util.StringMap;
 
+import com.qiniu.util.StringMap;
+
 public class Constants {
 
     public static final Integer CODE_WIDTH = 120; // 验证码宽度
@@ -34,10 +36,10 @@ public class Constants {
                     + "end\n"
                     + "return 1;\n";
 
-    public static final Integer UPLOAD_RETRY = 3; // 重传次数
-    public static final Integer EXPIRE_SECONDS = 60 * 60; // 过期时间
-//    public static final StringMap PUT_POLICY = new StringMap().put("returnBody", // 返回格式
-//            "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":\"$(fsize)\",\"width\":\"$(imageInfo.width)\", \"height\":\"$(imageInfo.height)\"}");
+    public static final Integer QINIU_UPLOAD_RETRY = 3; // 重传次数
+    public static final Integer QINIU_EXPIRE_SECONDS = 60 * 60; // 过期时间
+    public static final StringMap PUT_POLICY = new StringMap().put("returnBody", // 返回格式
+            "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":\"$(fsize)\",\"width\":\"$(imageInfo.width)\", \"height\":\"$(imageInfo.height)\"}");
 
     public static final String PAY_PRODUCT_CODE = "FAST_INSTANT_TRADE_PAY";
     public static final String PAY_SUBJECT = "PC支付测试";

@@ -30,15 +30,15 @@
                                 <input type="password" name="password" placeholder="请输入密码" class="layui-input">
                             </div>
                         </div>
-<!--                        <div class="layui-inline veri-code">-->
-<!--                            <div class="layui-input-inline">-->
-<!--                                <div class="layui-input-inline">-->
-<!--                                    <input type="text" name="key" id="key" hidden>-->
-<!--                                    <input type="text" name="code" placeholder="请输入验证码" class="layui-input">-->
-<!--                                    <img id="captcha">-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div class="layui-inline veri-code">
+                            <div class="layui-input-inline">
+                                <div class="layui-input-inline">
+                                    <input type="text" name="key" id="key" hidden>
+                                    <input type="text" name="code" placeholder="请输入验证码" class="layui-input">
+                                    <img id="captcha">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="layui-form-item login-btn">
                         <div class="layui-input-block">
@@ -55,17 +55,17 @@
     layui.use(['jquery', 'element', 'form'], function () {
         var $ = layui.jquery, form = layui.form;
 
-        // $.get('captcha', function (res) {
-        //     $('#key').val(res.data.key);
-        //     $('#captcha').attr('src', res.data.image);
-        // });
-        //
-        // $('#captcha').click(function () {
-        //     $.get('captcha', function (res) {
-        //         $('#key').val(res.data.key);
-        //         $('#captcha').attr('src', res.data.image);
-        //     });
-        // });
+        $.get('captcha', function (res) {
+            $('#key').val(res.data.key);
+            $('#captcha').attr('src', res.data.image);
+        });
+
+        $('#captcha').click(function () {
+            $.get('captcha', function (res) {
+                $('#key').val(res.data.key);
+                $('#captcha').attr('src', res.data.image);
+            });
+        });
 
         form.on('submit(login)', function (data) {
             $.post('login', data.field, function (res) {

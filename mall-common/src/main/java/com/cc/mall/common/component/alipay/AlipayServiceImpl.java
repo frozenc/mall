@@ -1,4 +1,4 @@
-package com.cc.mall.common.component.pay;
+package com.cc.mall.common.component.alipay;
 
 import cn.hutool.json.JSONUtil;
 import com.alipay.api.AlipayApiException;

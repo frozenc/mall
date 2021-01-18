@@ -20,6 +20,14 @@ public enum ResultCode implements IErrorCode {
     PRODUCT_NOT_EXIST(50010, "商品不存在"),
     PRODUCT_STOCK_NOT_ENOUGH(50011, "商品库存不足"),
 
+    // 验证码
+    CAPTCHA_EXPIRE(20000, "验证码过期"),
+    CAPTCHA_ERROR(20001, "验证码错误"),
+
+    // 上传文件
+    FILE_UPLOAD_EMPTY(30000, "上传文件不能为空"),
+    FILE_UPLOAD_ERROR(30001, "上传文件出错，debug中..."),
+
     //订单相关
     ORDER_NOT_EXIST(60000, "订单不存在"),
     ORDER_NOT_TO_BE_PAID(60001, "订单不属于待付款"),

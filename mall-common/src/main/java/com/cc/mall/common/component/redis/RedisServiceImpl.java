@@ -1,4 +1,4 @@
-package com.cc.mall.common.component.redis.impl;
+package com.cc.mall.common.component.redis;
 
 import com.cc.mall.common.component.redis.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.cc.mall.admin.facade;
 
 import com.cc.mall.common.base.GlobalException;
-import com.cc.mall.common.component.pay.AlipayService;
+import com.cc.mall.common.component.alipay.AlipayService;
 import com.cc.mall.common.utils.api.ResultCode;
 import com.cc.mall.common.utils.enums.OrderStatusEnum;
 import com.cc.mall.mbg.entity.OrderMaster;

@@ -30,7 +30,7 @@
         <pagehelper.version>1.2.10</pagehelper.version>
         <mybatis-plus-generator>3.3.0</mybatis-plus-generator>
         <rocketmq.version>2.1.1</rocketmq.version>
-        <qiniu.version>7.2.28</qiniu.version>
+        <qiniu.version>[7.3.0, 7.3.99]</qiniu.version>
         <alipay.version>4.9.5.ALL</alipay.version>
         <swagger.version>2.9.2</swagger.version>
         <logback.version>1.2.3</logback.version>
@@ -183,7 +183,23 @@
             <artifactId>alipay-sdk-java</artifactId>
             <version>${alipay.version}</version>
         </dependency>
+        <!--七牛云存储依赖-->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>${qiniu.version}</version>
+        </dependency>
+
+        <!--验证码依赖-->
+        <dependency>
+            <groupId>com.github.whvcse</groupId>
+            <artifactId>easy-captcha</artifactId>
+            <version>${captcha.version}</version>
+        </dependency>
     </dependencies>
+
+
+
 
 <!--    <build>-->
 <!--        <plugins>-->

@@ -1,10 +1,7 @@
 package com.cc.mall.app.controller;
 
-import cn.hutool.json.JSONUtil;
-import com.alipay.api.AlipayApiException;
-import com.alipay.api.internal.util.AlipaySignature;
 import com.cc.mall.app.facade.OrderMasterFacade;
-import com.cc.mall.common.component.pay.AlipayService;
+import com.cc.mall.common.component.alipay.AlipayService;
 import com.cc.mall.common.utils.enums.OrderStatusEnum;
 import com.cc.mall.common.utils.utils.Constants;
 import io.swagger.annotations.Api;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 /**
  * mall-app
@@ -25,7 +21,7 @@ import java.util.Map;
  **/
 @Slf4j
 @RestController
-@Api("支付宝支付回调")
+@Api(tags = "支付宝支付回调")
 public class AlipayController {
     @Autowired
     private OrderMasterFacade orderMasterFacade;
