@@ -135,12 +135,13 @@ public class OrderMasterFacade {
     /**
      * 分页查询订单
      */
-    public Page<OrderMaster> list(OrderPageRequest orderPageRequest) {
+    public Page<OrderMaster> list(String username, OrderPageRequest orderPageRequest) {
         Page<OrderMaster> page = new Page<>(orderPageRequest.getPageNum(), orderPageRequest.getPageSize());
         QueryWrapper<OrderMaster> queryWrapper = new QueryWrapper<>();
         if (!StringUtils.isEmpty(orderPageRequest.getStatus())) {
             queryWrapper.lambda().eq(OrderMaster::getStatus, orderPageRequest.getStatus());
         }
+        queryWrapper.lambda().eq(OrderMaster::getUsername, username);
         queryWrapper.lambda().orderByDesc(OrderMaster::getCreateTime);
         return orderMasterService.page(page, queryWrapper);
     }

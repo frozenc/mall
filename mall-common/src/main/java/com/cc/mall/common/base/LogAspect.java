@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 public class LogAspect {
 
     // 定义切点
-    @Pointcut("execution(* com.example.demo.controller.*Controller.*(..))")
+    @Pointcut("execution(* com.cc.mall.*.controller.*Controller.*(..))")
     public void excuteService() {
     }
 

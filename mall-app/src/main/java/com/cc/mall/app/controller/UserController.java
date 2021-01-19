@@ -3,6 +3,7 @@ package com.cc.mall.app.controller;
 import cn.hutool.core.convert.Convert;
 import com.cc.mall.app.facade.UserFacade;
 import com.cc.mall.common.utils.api.CommonResult;
+import com.cc.mall.common.utils.dto.RegisterDto;
 import com.cc.mall.common.utils.dto.UserInfoDto;
 import com.cc.mall.common.utils.dto.UserLoginDto;
 import com.cc.mall.common.utils.dto.UserRegisterDto;
@@ -70,8 +71,8 @@ public class UserController {
     @ApiOperation("注册")
     @PostMapping("/register")
     @ResponseBody
-    public CommonResult<User> register(@Valid UserRegisterDto userRegisterDto) {
-        User user = userFacade.register(userRegisterDto);
+    public CommonResult<User> register(@Valid RegisterDto registerDto) {
+        User user = userFacade.register(registerDto);
         if (user == null) {
             return CommonResult.failed("用户名已注册");
         }

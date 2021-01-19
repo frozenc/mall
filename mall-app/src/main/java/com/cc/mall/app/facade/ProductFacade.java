@@ -32,6 +32,7 @@ public class ProductFacade{
         if (!StringUtils.isEmpty(pageRequest.getCategory())) {
             queryWrapper.lambda().eq(Product::getCategory, pageRequest.getCategory());
         }
+        queryWrapper.lambda().eq(Product::getStatus, true);
         queryWrapper.lambda().orderByDesc(Product::getId);
         return productService.page(page, queryWrapper);
     }

@@ -47,7 +47,7 @@ public class OrderController {
     @ApiOperation("获取订单列表")
     @GetMapping("/list")
     public CommonResult<List<OrderVo>> list(@ApiIgnore Authentication authentication, @Valid OrderPageRequest pageRequest) {
-        Page<OrderMaster> page = orderMasterFacade.list(pageRequest);
+        Page<OrderMaster> page = orderMasterFacade.list(authentication.getName(), pageRequest);
         List<OrderVo> orderVoList = Convert.convert(new TypeReference<List<OrderVo>>() {
         }, page.getRecords());
         return CommonResult.success(orderVoList);

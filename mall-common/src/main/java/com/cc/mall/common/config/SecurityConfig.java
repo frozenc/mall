@@ -1,10 +1,7 @@
 package com.cc.mall.common.config;
 
 
-import com.cc.mall.common.jwt.JwtAuthenticationTokenFilter;
-import com.cc.mall.common.jwt.JwtRestAuthenticationEntryPoint;
-import com.cc.mall.common.jwt.JwtRestfulAccessDeniedHandler;
-import com.cc.mall.common.jwt.JwtUserDetails;
+import com.cc.mall.common.jwt.*;
 import com.cc.mall.mbg.entity.User;
 import com.cc.mall.common.service.JwtUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +43,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private CaptchaFilter captchaFilter;
+
+    @Autowired
+    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
+
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable() // 使用jwt不需要csrf
@@ -64,6 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources/**",
                         "/v2/api-docs/**"
                 ).permitAll()
+                .antMatchers("/error").permitAll()
                 .antMatchers("/return", "/notify").permitAll() // 支付回调
                 .antMatchers("/login", "/register", "/captcha").permitAll() //登录注册要允许匿名访问
                 .antMatchers(HttpMethod.GET, "/product", "/category", "/test").permitAll()
@@ -72,8 +76,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated(); //除上面外的所有请求全部需要鉴权认证
         // 禁用缓存
         httpSecurity.headers().cacheControl();
+        // 添加captcha filter
         // 添加JWT filter
-        httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.addFilterBefore(captchaFilter, UsernamePasswordAuthenticationFilter.class);
+        // 添加JWT filter
+        httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
         //添加自定义未授权和未登录结果返回
         httpSecurity.exceptionHandling()
                 .accessDeniedHandler(restfulAccessDeniedHandler)
@@ -103,11 +110,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             }
             throw new UsernameNotFoundException("用户名或密码错误");
         };
-    }
-
-    @Bean
-    public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter(){
-        return new JwtAuthenticationTokenFilter();
     }
 
     @Bean

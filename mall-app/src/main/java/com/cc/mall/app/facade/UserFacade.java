@@ -3,6 +3,7 @@ package com.cc.mall.app.facade;
 import cn.hutool.core.convert.Convert;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.cc.mall.common.utils.dto.RegisterDto;
 import com.cc.mall.common.utils.dto.UserInfoDto;
 import com.cc.mall.common.utils.dto.UserLoginDto;
 import com.cc.mall.common.utils.dto.UserRegisterDto;
@@ -49,9 +50,9 @@ public class UserFacade {
         return jwtUserService.login(userLoginDto);
     }
 
-    public User register(UserRegisterDto userRegisterDto) {
+    public User register(RegisterDto registerDto) {
         User user = new User();
-        BeanUtils.copyProperties(userRegisterDto, user);
+        BeanUtils.copyProperties(registerDto, user);
         //查询是否有重复用户
         QueryWrapper<User> queryWrapper = new QueryWrapper<User>()
                 .eq("username", user.getUsername());
